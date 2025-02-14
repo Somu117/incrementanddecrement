@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increase and Decrease Number</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       #main{
+        height: 30vh;
+        width: 30vw;
+        border: 5px outset;
+        display: grid;
+        justify-content: center;
+        margin-left: 30%;
+        background-color: black;
+        border-radius: 30px;
+        align-content: center;
+        margin-top: 30vh;
+        overflow: hidden;
+        flex-wrap: wrap;
+       }
+       h1{
+        color: white;
+       }
+      #increaseBtn:hover{
+        background-color: greenyellow;
+      }
+      #decreaseBtn:hover{
+        background-color: red;
+      }
+      @media screen and (min-width:0px) and (max-width:340px) {
+       h1{
+        font-size: 1em;
+        color: yellowgreen;
+       }
+       button{
+        font-size: 0.8em;
+        display: flex;
+        size: 1em;
+        flex-direction: column;
+
+       }
+      }
+    </style>
+  </head>
+  <body>
+   <div id ="main">
+    <h1>Number: <span id="number">0</span></h1><br>
+    <div class="Btn">
+        
+    <button id="increaseBtn">Increase</button>
+    <button id="decreaseBtn">Decrease</button> 
+    </div>
+   </div>
+
+    <script>
+      let number = 0;
+
+      const numberDisplay = document.getElementById("number");
+      const increaseButton = document.getElementById("increaseBtn");
+      const decreaseButton = document.getElementById("decreaseBtn");
+
+      function updateDisplay() {
+        numberDisplay.textContent = number;
+      }
+
+      increaseButton.addEventListener("click", () => {
+        number++;
+        updateDisplay();
+      });
+
+      decreaseButton.addEventListener("click", () => {
+        number--;
+        updateDisplay();
+      });
+
+    </script>
+  </body>
+</html>
